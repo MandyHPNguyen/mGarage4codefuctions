@@ -57,7 +57,7 @@ loadpkg_Rtools <- function(c.packages) {
   
   cat("Imported Packages Check:\n")
   ipak(pkgs)
-  # suppressWarnings(ipak(pkgs))
+  suppressWarnings(ipak(pkgs))
   print(">>> Thank you for using a function of Mandy HP Nguyen! <<<")
 }
 
