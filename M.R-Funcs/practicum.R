@@ -74,7 +74,7 @@ loadpkg <- function(c.packages) {
     sapply(pkg, require, character.only = TRUE)
   }
   cat("Imported Packages Check:\n")
-  ipak(pkgs)
+  suppressWarnings(ipak(pkgs))
   # suppressWarnings(ipak(pkgs))
   print(">>> Thank you for using a function of Mandy HP Nguyen! <<<")
 }
