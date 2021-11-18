@@ -1,5 +1,5 @@
-# Auto Load and Check Availability of Packages
-loadpkg <- function(c.packages) {
+# Auto Load and Check Availability of Packages ----
+loadpkg_Rtools <- function(c.packages) {
   
   if (!require("pkgbuild")) install.packages("pkgbuild"); library(pkgbuild)
   if (!require("installr")) install.packages("installr"); library(installr)
@@ -59,6 +59,25 @@ loadpkg <- function(c.packages) {
   # suppressWarnings(ipak(pkgs))
   print(">>> Thank you for using a function of Mandy HP Nguyen! <<<")
 }
+
+loadpkg <- function(c.packages) {
+  
+  # Install and load the requested packages
+  
+  pkgs <- c.packages
+  ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+      install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+  }
+  cat("Imported Packages Check:\n")
+  ipak(pkgs)
+  # suppressWarnings(ipak(pkgs))
+  print(">>> Thank you for using a function of Mandy HP Nguyen! <<<")
+}
+
+
 
 # Clean R Environment
 cleanR <- function() {
