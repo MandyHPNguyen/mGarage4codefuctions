@@ -60,6 +60,7 @@ loadpkg_Rtools <- function(c.packages) {
   print(">>> Thank you for using a function of Mandy HP Nguyen! <<<")
 }
 
+# Auto Load and Check Availability of Packages without asking for Rtools ----
 loadpkg <- function(c.packages) {
   
   # Install and load the requested packages
